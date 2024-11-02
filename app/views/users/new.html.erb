@@ -1,0 +1,22 @@
+<div class="registration-container">
+    <h1>日記を始める</h1>
+    <%= form_for(@user, url: { controller: 'users', action: 'create' }) do |form| %>
+      <div class="form-group">
+        <%= form.label :user_id, "ユーザid" %>
+        <%= form.text_field :user_id, required: true, placeholder: "ユーザidを入力" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :name, "名前" %>
+        <%= form.text_field :name, required: true, placeholder: "名前を入力" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :password_digest, "パスワード" %>
+        <%= form.password_field :password_digest, required: true, placeholder: "パスワードを入力" %>
+      </div>
+      <div class="form-group">
+        <%= form.submit "登録", class: "btn" %>
+      </div>
+    <% end %>
+    <p class="redirect">すでに日記帳をお持ちですか？<a href="/login">ログイン</a></p>
+  </div>
+
